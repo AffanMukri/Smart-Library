@@ -1,0 +1,7 @@
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import AppLayout from "./components/AppLayout"; import LibraryProvider from "./context/LibraryProvider";
+import Activity from "./pages/Activity"; import Books from "./pages/Books"; import Dashboard from "./pages/Dashboard"; import Entrance from "./pages/Entrance"; import Lighting from "./pages/Lighting"; import Sensors from "./pages/Sensors";
+import SmartCheckout from "./pages/SmartCheckout"; import Loans from "./pages/Loans"; import Students from "./pages/Students"; import Security from "./pages/Security";
+export default function App() { return <BrowserRouter><LibraryProvider><Routes><Route element={<AppLayout />}>
+  <Route path="/dashboard" element={<Dashboard />} /><Route path="/smart-checkout" element={<SmartCheckout />} /><Route path="/books" element={<Books />} /><Route path="/students" element={<Students />} /><Route path="/loans" element={<Loans />} /><Route path="/fines" element={<Loans finesOnly />} /><Route path="/entrance" element={<Entrance />} /><Route path="/lighting" element={<Lighting />} /><Route path="/security" element={<Security />} /><Route path="/sensors" element={<Sensors />} /><Route path="/activity" element={<Activity />} />
+  </Route><Route path="/" element={<Navigate to="/dashboard" replace />} /><Route path="*" element={<Navigate to="/dashboard" replace />} /></Routes></LibraryProvider></BrowserRouter>; }

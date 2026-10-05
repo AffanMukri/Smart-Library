@@ -1,0 +1,29 @@
+# Git ignore rules for the entire monorepo
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.db
+.env
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/.env.local
+
+# Misc
+.DS_Store
+*.log
+.idea/
+.vscode/
